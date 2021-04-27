@@ -9,7 +9,8 @@
 2. Repositories
 
 3. Undo
-  git reset HEAD
+  git reset HEAD data/northern.csv
+  git checkout -- data/northern.csv
 
 
 
