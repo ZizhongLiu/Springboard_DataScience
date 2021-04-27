@@ -1,6 +1,12 @@
 1. Basic Workflow
-
+  cd dental
+  git status
+  git add report.txt
+  git add data/northern.csv
+  git commit -m "add a new file"
+  git commit --amend -m "new message"
+  
 2. Repositories
 
 3. Undo
-  
+  git reset HEAD
