@@ -15,7 +15,11 @@
   git reset
   
 4. Working with branches
-
-
+  git branch
+  git diff summary-statistics..master
+  git checkout summary-statistics
+  git rm report.txt
+  git checkout -b branch-name
+  git merge summary-statistics master
 
 
