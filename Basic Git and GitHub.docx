@@ -21,5 +21,7 @@
   git rm report.txt
   git checkout -b branch-name
   git merge summary-statistics master
+  
+5. Collaborating
 
 
