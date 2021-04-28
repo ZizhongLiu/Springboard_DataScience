@@ -11,6 +11,11 @@
 3. Undo
   git reset HEAD data/northern.csv
   git checkout -- data/northern.csv
+  git checkout -- .
+  git reset
+  
+4. Working with branches
+
 
 
 
