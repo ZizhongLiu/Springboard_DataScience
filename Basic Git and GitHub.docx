@@ -1,5 +1,6 @@
 1. Basic Workflow
   cd dental
+  pwd /home/repl/dental
   git status
   git add report.txt
   git add data/northern.csv
@@ -23,5 +24,14 @@
   git merge summary-statistics master
   
 5. Collaborating
+  git init project-name
+  git init /path/to/project
+  git clone /existing/project newprojectname
+  git remote
+  git remote -v
+  git remote add remote-name URL
+  git remote rm remote-name
+  git pull thunk latest-analysis
+  git push remote-name branch-name
 
 
