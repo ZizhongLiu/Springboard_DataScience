@@ -1,0 +1,28 @@
+# Manipulating files and directories
+pwd | "print working directory" tells you where you are 
+ls /home/repl | ""listing
+cd seasonal (relative path of /home/repl/seasonal)
+cd .. | moves you up
+ls == ls . | A single dot on its own, ., always means "the current directory"
+ls ~ will always list the contents of your home directory, and cd ~ will always take you home
+cp original.txt duplicate.txt | cp, which is short for "copy"
+mv autumn.csv winter.csv .. | While cp copies a file, mv moves it from one directory to another
+mv course.txt new-course.txt | mv can also be used to rename files.
+mv ~/people/agarwal.txt scratch
+rm thesis.txt backup/thesis-2017-08.txt | we use rm, which stands for "remove". As with cp and mv, you can give rm the names of as many files as you'd like
+rmdir <an empty directory>
+mkdir directory_name | to create a new (empty) directory
+
+# Manipulating data
+cat | which just prints the contents of files onto the screen. 
+less seasonal/spring.csv seasonal/summer.csv | a file, one page is displayed at a time
+head -n 3 seasonal/summer.csv
+ls -R -F ~
+cut -f 2-5,8 -d , values.csv | "select columns 2 through 5 and columns 8, using comma as the separator"
+grep bicuspid seasonal/winter.csv | takes a piece of text followed by one or more filenames and prints all of the lines in those files that contain that text. 
+
+# Combining tools
+head -n 5 seasonal/summer.csv > top.csv | nothing appears on the screen. Instead, head's output is put in a new file called top.csv. 
+cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | head -n 1
+wc (short for "word count") prints the number of characters, words, and lines in a file -c, -w, or -l respectively.
+cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort -r
