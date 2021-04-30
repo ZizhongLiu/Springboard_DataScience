@@ -26,3 +26,31 @@ head -n 5 seasonal/summer.csv > top.csv | nothing appears on the screen. Instead
 cut -d , -f 2 seasonal/summer.csv | grep -v Tooth | head -n 1
 wc (short for "word count") prints the number of characters, words, and lines in a file -c, -w, or -l respectively.
 cut -d , -f 2 seasonal/winter.csv | grep -v Tooth | sort -r
+
+# Batch processing
+training=seasonal/summer.csv
+echo $training
+head -n 1 $training
+for …variable… in …list… ; do …body… ; done
+for f in seasonal/*.csv; do echo $f; head -n 2 $f | tail -n 1; done
+
+# Creating new tools
+nano filename, it will open filename for editing (or create it if it doesn't already exist). 
+Ctrl + K: delete a line.
+Ctrl + U: un-delete a line.
+Ctrl + O: save the file ('O' stands for 'output'). You will also need to press Enter to confirm the filename!
+Ctrl + X: exit the editor.
+nano dates.sh >>> bash dates.sh
+$@ (dollar sign immediately followed by at-sign) to mean "all of the command-line parameters given to the script".
+bash unique-lines.sh seasonal/summer.csv
+
+# Write loops in shell script NANO: Print the first and last data records of each file.
+for filename in $@
+do
+    head -n 2 $filename | tail -n 1
+    tail -n 1 $filename
+done
+# (You don't have to indent the commands inside the loop, but doing so makes things clearer.)
+
+
+
