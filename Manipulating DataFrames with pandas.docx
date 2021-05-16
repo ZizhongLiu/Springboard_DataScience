@@ -1,1 +1,65 @@
+1.  Extracting and transforming data
+- Index ordering
+    In this exercise, the DataFrame election is provided for you. It contains the 2012 US election results for the state of Pennsylvania with county names as row indices. Your job is to select 'Bedford' county and the'winner' column. 
+    election.loc['Bedford', 'winner']
+
+- Positional and labeled indexing
+    # Assign the row position of election.loc['Bedford']: x
+    x = 4
+
+    # Assign the column position of election['winner']: y
+    y = 4
+
+    # Print the boolean equivalence
+    print(election.iloc[x, y] == election.loc['Bedford', 'winner'])
+
+- Indexing and column rearrangement
+    # Import pandas
+    import pandas as pd
+
+    # Read in filename and set the index: election
+    election = pd.read_csv(filename, index_col='county')
+
+    # Create a separate dataframe with the columns ['winner', 'total', 'voters']: results
+    results = election[['winner', 'total', 'voters']]
+
+    # Print the output of results.head()
+    print(results.head())
+
+- Slicing rows
+    # Slice the row labels 'Perry' to 'Potter': p_counties
+    p_counties = election.loc['Perry':'Potter']
+
+    # Print the p_counties DataFrame
+    print(p_counties)
+
+    # Slice the row labels 'Potter' to 'Perry' in reverse order: p_counties_rev
+    p_counties_rev = election.loc['Potter':'Perry':-1]
+
+    # Print the p_counties_rev DataFrame
+    print(p_counties_rev)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
