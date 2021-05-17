@@ -222,7 +222,7 @@
     # Look up data for all states in month 2: all_month2
     all_month2 = sales.loc[(slice(None), 2), :]
 
-
+3. Rearranging and reshaping data
 
 
 
