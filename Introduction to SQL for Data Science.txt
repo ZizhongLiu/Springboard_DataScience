@@ -1,0 +1,46 @@
+1. Introduction to SQL for Data Science
+- Onboarding | Tables
+
+- Onboarding | Query Result
+    SELECT name FROM people;
+
+- Onboarding | Errors
+    -- Try running me!
+    SELECT 'DataCamp <3 SQL'
+    AS result;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
