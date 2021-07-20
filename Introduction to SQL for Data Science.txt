@@ -9,30 +9,40 @@
     SELECT 'DataCamp <3 SQL'
     AS result;
     
+- Onboarding | Multi-step Exercises
+    SELECT 'SQL is cool'
+    AS result;
 
+- SELECTing single columns
+    SELECT name
+    FROM people;
+    
+    select name
+    from people;
 
+- SELECTing multiple columns
+    select title from films;
 
+    SELECT title, release_year FROM films;
 
+    SELECT title, release_year, country FROM films;
 
+    SELECT * FROM films;
 
+- SELECT DISTINCT
+    SELECT DISTINCT language FROM films;
+    select distinct certification from films;
+    select distinct role from roles
 
+- Learning to COUNT
+    SELECT COUNT(*) FROM reviews;
 
+- Practice with COUNT
+    SELECT COUNT(*) FROM people;
+    SELECT COUNT(birthdate) FROM people;
+    SELECT COUNT(distinct birthdate) FROM people;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+2. Filtering rows
 
 
 
