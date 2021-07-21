@@ -43,6 +43,60 @@
     SELECT COUNT(distinct birthdate) FROM people;
 
 2. Filtering rows
+- Simple filtering of numeric values
+    SELECT * FROM films WHERE release_year = 2016;
+    select count(*) from films where release_year<2000;
+    select title, release_year from films where release_year>2000;
+
+- Simple filtering of text
+    select * from films where language = 'French';
+    select name, birthdate from people where birthdate='1974-11-11';
+    select count(*) from films where language = 'Hindi';
+    select * from films where certification='R';
+
+- WHERE AND
+    select title, release_year from films where release_year<2000 and language='Spanish';
+    select * from films where release_year>2000 and language='Spanish';
+    select * from films where language='Spanish' and release_year > 2000 and release_year < 2010;
+
+- WHERE AND OR (2)
+    SELECT title, release_year FROM films WHERE release_year >= 1990 and release_year < 2000;
+    SELECT title, release_year FROM films WHERE (release_year >= 1990 AND release_year < 2000) AND (language = 'French' or language = 'Spanish');
+    SELECT title, release_year FROM films WHERE (release_year >= 1990 AND release_year < 2000) AND (language = 'French' OR language = 'Spanish') AND gross > 2000000;
+
+- BETWEEN (2)
+    SELECT title, release_year FROM films WHERE release_year between 1990 and 2000;
+    SELECT title, release_year FROM films WHERE release_year BETWEEN 1990 AND 2000 and budget > 100000000;
+    SELECT title, release_year FROM films WHERE release_year BETWEEN 1990 AND 2000 AND budget > 100000000 and language = 'Spanish';
+    SELECT title, release_year FROM films WHERE release_year BETWEEN 1990 AND 2000 AND budget > 100000000 and (language = 'Spanish' or language = 'French');
+
+- WHERE IN
+    SELECT title, release_year FROM films WHERE release_year in (1990, 2000) and duraction>120;
+    select title, language from films where language in ('English', 'Spanish', 'French');
+    select title, certification from films where certification in ('NC-17', 'R');
+
+- NULL and IS NULL
+    SELECT name FROM people WHERE deathdate IS NULL;
+    select title from films where budget is null;
+    select count(*) from films where language is null;
+
+- LIKE and NOT LIKE
+    select name from people where name LIKE 'B%';
+    select name from people where name LIKE '_r%';
+    select name from people where name NOT LIKE 'A%';
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
