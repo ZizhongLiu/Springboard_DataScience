@@ -111,5 +111,105 @@
     -- get the count(deathdate) and multiply by 100.0
     -- then divide by count(*)
     select count(deathdate) * 100.0 / count(*) as percentage_dead from people;
-select max(release_year)-min(release_year) as difference from films;
-select (max(release_year)-min(release_year))/10 as number_of_decades from films;
+    select max(release_year)-min(release_year) as difference from films;
+    select (max(release_year)-min(release_year))/10 as number_of_decades from films;
+    
+    
+4. Sorting and grouping
+- Sorting single columns    
+    select name from people order by name;
+    select name from people order by birthdate;
+    select name, birthdate from people order by birthdate;
+
+- Sorting single columns (2)
+    select title from films where release_year in (2000,2012) order by release_year;
+    select * from films where release_year <> 2015 order by duration;
+    SELECT title, gross FROM films WHERE title LIKE 'M%' ORDER BY title;
+        
+- Sorting single columns (DESC)
+    select imdb_score, film_id from reviews order by imdb_score desc;
+    select title from films order by title desc;
+    select title, duration from films order by duration desc;
+
+- Sorting multiple columns
+    select birthdate, name from people order by birthdate, name;
+    select release_year, duration, title from films order by release_year, duration;
+    select certification, release_year, title from films order by certification,release_year;
+    select name, birthdate from people order by name, birthdate;
+
+- GROUP BY practice
+    select release_year, count(*) from films group by release_year;
+    select release_year, avg(duration) from films group by release_year;
+    select release_year, max(budget) from films group by release_year;
+    select imdb_score, count(*) from reviews group by imdb_score;
+
+- GROUP BY practice (2)
+    select release_year, min(gross) from films group by release_year;
+    select language, sum(gross) from films group by language;
+    select country, sum(budget) from films group by country;
+    select release_year, country, max(budget) from films group by release_year, country order by release_year,country;
+    select country, release_year, min(gross) from films group by release_year, country order by country, release_year;
+
+- HAVING a great time
+    SELECT release_year FROM films GROUP BY release_year HAVING COUNT(title) > 200;
+    
+- All together now
+    SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+    FROM films
+    WHERE release_year > 1990
+    GROUP BY release_year
+    HAVING AVG(budget) > 60000000
+    order by avg_gross desc;
+
+- All together now (2)
+    -- select country, average budget, 
+    select country, AVG(budget) AS avg_budget,
+    --     and average gross
+    AVG(gross) AS avg_gross
+    -- from the films table
+    from films
+    -- group by country 
+    group by country
+    -- where the country has more than 10 titles
+    having count(title) > 10
+    -- order by country
+    order by country
+    -- limit to only show 5 results
+    limit 5;
+
+- A taste of things to come
+    SELECT title, imdb_score
+    FROM films
+    JOIN reviews
+    ON films.id = reviews.film_id
+    WHERE title = 'To Kill a Mockingbird';
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
