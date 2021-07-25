@@ -1,0 +1,7 @@
+1. Introduction to joins
+- Inner join
+    -- Select name fields (with alias) and region 
+    SELECT cities.name AS city, countries.name AS country, region
+    FROM cities
+      INNER JOIN countries
+        ON cities.country_code = countries.code;
