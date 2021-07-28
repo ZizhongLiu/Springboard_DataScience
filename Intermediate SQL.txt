@@ -216,6 +216,71 @@
     ON c.id = m.country_id
     GROUP BY country;
 
+2. Short and Simple Subqueries
+- Filtering using scalar subqueries
+    -- Select the average of home + away goals, multiplied by 3
+    SELECT 
+      3 * avg(home_goal + away_goal)
+    FROM matches_2013_2014;
+
+    SELECT 
+      -- Select the date, home goals, and away goals scored
+        date,
+      home_goal,
+      away_goal
+    FROM  matches_2013_2014
+    -- Filter for matches where total goals exceeds 3x the average
+    WHERE (home_goal + away_goal) >
+           (SELECT 3 * AVG(home_goal + away_goal)
+            FROM matches_2013_2014); 
+
+- Filtering using a subquery with a list
+    SELECT 
+      -- Select the team long and short names
+      team_long_name,
+      team_short_name
+    FROM team
+    -- Exclude all values from the subquery
+    WHERE team_api_id not in
+         (select DISTINCT hometeam_id  FROM match);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
