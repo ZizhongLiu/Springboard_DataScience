@@ -1,0 +1,39 @@
+1. We'll take the CASE
+- CASE statements comparing two column values part 2
+    -- Select matches where Barcelona was the away team
+    SELECT  
+      m.date,
+      t.team_long_name AS opponent,
+      case when m.home_goal < m.away_goal then 'Barcelona win!'
+            WHEN m.home_goal > m.away_goal then 'Barcelona loss :(' 
+            else 'Tie' end as outcome
+    FROM matches_spain AS m
+    -- Join teams_spain to matches_spain
+    LEFT JOIN teams_spain AS t 
+    ON m.hometeam_id = t.team_api_id
+    WHERE m.awayteam_id = 8634;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
