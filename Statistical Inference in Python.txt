@@ -1,0 +1,4 @@
+1. Graphical Exploratory Data Analysis
+- Plotting a histogram of iris data
+    import matplotlib.pyplot as plt
+    import seaborn as sns
